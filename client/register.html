@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./css/register.css">
+<link rel="icon" href="./css/icon.png">
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<style>
+</style>
+</head>
+<body>
+  <div id="app">
+    <div class="container">
+      <h1>Register</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <label for="name"><b>Name</b></label>
+      <input type="text" placeholder="Input Name" v-model="name" required>
+      <label for="email"><b>Email</b></label>
+      <input type="email" placeholder="Input Email" class="email" v-model="email" required>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Input Password" v-model="password" required>
+      <hr>
+      <button type="submit" class="registerbtn" @click="register">Register</button>
+    </div>
+    
+    <div class="container signin">
+      <p>Already have an account? <a href="index.html">Sign in</a></p>
+    </div>
+  </div> 
+  <script src="fileJs/register.js"></script>
+</body>
+</html>

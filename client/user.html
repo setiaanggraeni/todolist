@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="icon" href="./css/icon.png">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/user.css">
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li @click="logout"><a class="active" href="#" style="font-size: 20px;">Logout</a></li>
+            <li><a class="active" href="youtube.html" style="font-size: 20px;">Youtube</a></li>
+        </ul>
+        <div v-if="seen">
+            <center>
+                <form>
+                    <div v-for="taskForEdit in taskWillEdit">
+                        Task:<br>
+                        <input type="text" v-model="taskForEdit.task" style="border-radius: 7px;">
+                        <br>
+                        Due Date:<br>
+                        <input type="date" v-model="taskForEdit.dueDate" style="border-radius: 7px;">
+                        <br>
+                        Status:<br>
+                        <select v-model="status">
+                            <option value="uncomplete">Uncomplete</option>
+                            <option value="completed">Completed</option>
+                          </select>
+                        <br><br>
+                        <input type="submit" style="border-radius: 10px; background-color: paleturquoise" @click="updateTask(taskForEdit.taskId, taskForEdit.task, taskForEdit.dueDate, status)" value="Update Task">
+                    </div>
+                </form>
+            </center>
+        </div>
+        <br>
+        <h1 style="text-align: center">Your Tasks</h1>
+
+        <table class="tableTask">
+            <thead>
+                <tr>
+                <th>Task</th>
+                <th>Created At</th>
+                <th>Duedate</th>
+                <th>Status</th>
+                <th>Option</th>
+                </tr>
+            </thead>
+            <tbody v-for="task in tasks">
+                <tr>
+                    <td>{{task.task}}</td>
+                    <td>{{task.start}}</td>
+                    <td>{{task.dueDate}}</td>
+                    <td >{{task.status}}</td>
+                    <td><button @click="edit(task)" style="border-radius: 10px;color:blue;width: 70px;">edit</button> || <button @click = "deleteTask(task.taskId)" style="border-radius: 10px;color:red;width: 70px;">delete</button> </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>  
+        
+        <div class="divAddTask">
+            <form class="newTask">
+                <h3 style="text-align: center; font-size: 30px;">Create New Task</h3>
+                <label>Task</label>
+                <input class="w3-input" type="text" v-model="task">
+                <label>Duedate</label>
+                <input class="w3-input" type="date" v-model="dueDate">
+            </form>
+            <br>
+            <button class="btnAddNewTask" @click="createTask"> Submit New Task </button>
+        </div>
+        <br>
+    </div>
+    <script src="fileJs/user.js"></script>
+    <script src="fileJs/fb.js"></script>
+</body>
+</html>

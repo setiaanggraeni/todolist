@@ -1,0 +1,100 @@
+html *
+{
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: aquamarine;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    border: 1px solid pink;
+    margin-left: 25%;
+    height: 50px;
+    padding-top: 12px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.btnAddNewTask{
+    border-radius: 10px;
+    background-color: aquamarine;
+    height: 35px;
+    margin-left: 45%;
+}
+.tableTask{
+    border: 1px solid pink;
+    width: 70%;
+    margin-left: 15%;
+}
+th{
+    border: 1px solid pink;
+    background-color: aquamarine;
+}
+td{
+    border: 1px solid pink 
+}
+
+.newTask{
+    width: 50%;
+    margin-left: 25%;
+}
+
+.divAddTask{
+    width: 70%;
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px #888888;
+    margin-left: 15%;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}

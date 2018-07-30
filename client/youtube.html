@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/youtube.css">
+    <link rel="icon" href="./css/icon.png">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>To Do List</title>
+</head>
+<body>
+    <div id="app">
+        <div style="text-align: right"><a href="user.html">Back</a></div>
+        <h1 style="text-align: center">Get Tutorial From Youtube</h1>
+        <center>
+            <input type="text" value="search" v-model="queries" placeholder="What are you looking for~">
+            <button v-on:click="search">Search</button>
+        </center>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-xs-6 col-md-4" v-for="video in result">
+                <div class="content">
+                    <iframe v-bind:src= '"https://www.youtube.com/embed/" + video.id.videoId' style="width:100%; height: 300px;"></iframe>
+                    {{video.snippet.title}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="fileJs/youtube.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+.column {
+    float: center;
+    width: 30%;
+    padding: 5px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+input {
+    width: 50%;
+    height: 30px;
+    border-radius: 7px;
+    border: 1px solid paleturquoise;
+    margin-left: 20%;
+}
+
+button {
+    width: 10%;
+    height: 30px;
+    border-radius: 7px;
+    border: 1px solid paleturquoise;
+    background-color: aquamarine
+}
