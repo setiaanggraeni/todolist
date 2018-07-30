@@ -21,7 +21,7 @@ let vw = new Vue({
         getTasks() { // profile user
             let token = localStorage.getItem('token')
             if(token){
-                axios.get('http://localhost:3000/users/tasks', {
+                axios.get('http://35.198.242.177/users/tasks', {
                     headers: {
                         token : localStorage.getItem("token")
                     }
@@ -41,7 +41,7 @@ let vw = new Vue({
         createTask(){
             let token = localStorage.getItem('token')
             if(token){
-                axios.post('http://localhost:3000/tasks/addtask', {
+                axios.post('http://35.198.242.177/tasks/addtask', {
                     task : this.task,
                     dueDate: this.dueDate
                 }, {
@@ -68,7 +68,7 @@ let vw = new Vue({
         deleteTask(taskId){
             let token = localStorage.getItem('token')
             if(token){
-                axios.delete(`http://localhost:3000/tasks/delete/${taskId}`, {
+                axios.delete(`http://35.198.242.177/tasks/delete/${taskId}`, {
                     headers : {
                         token: localStorage.getItem("token"),
                     }
@@ -93,7 +93,7 @@ let vw = new Vue({
         updateTask(taskId, task, dueDate, status){
             let token = localStorage.getItem('token')
             if(token){
-                axios.put(`http://localhost:3000/tasks/edit/${taskId}`, {
+                axios.put(`http://35.198.242.177/tasks/edit/${taskId}`, {
                     task : task,
                     dueDate: dueDate,
                     status: status

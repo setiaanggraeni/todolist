@@ -7,7 +7,7 @@ let vw = new Vue({
     },
     methods: {
         register(){
-            axios.post('http://localhost:3000/users/register', {
+            axios.post('http://35.198.242.177/users/register', {
                 name: this.name,
                 email: this.email,
                 password: this.password

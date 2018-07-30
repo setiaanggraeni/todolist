@@ -42,7 +42,7 @@ window.fbAsyncInit = function() {
 
 function checkAccountRegistered() {
   // console.log('---- check account', localStorage.getItem('tokenFB') )
-  axios.get('http://localhost:3000/users/login/fb', {
+  axios.get('http://35.198.242.177/users/login/fb', {
     headers: {
       token: localStorage.getItem('tokenFB') 
     }

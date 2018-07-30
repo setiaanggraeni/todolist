@@ -22,7 +22,7 @@ let vm = new Vue({
         },
         login(){
             localStorage.removeItem('token')
-            axios.post('http://localhost:3000/users/login', {
+            axios.post('http://35.198.242.177/users/login', {
                 email: this.email,
                 password: this.password
             })
